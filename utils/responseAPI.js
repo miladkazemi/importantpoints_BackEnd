@@ -10,13 +10,6 @@ function standard(status, data) {
     }
 }
 
-function allQuestions(reverseList, simpleList) {
-    return {
-        'reverse': reverseList,
-        'simple': simpleList,
-    }
-}
-
 function status(code) {
     return {
         'ok': (code == errorHandling.code_ok) ? true : false,
@@ -25,12 +18,11 @@ function status(code) {
     }
 }
 
-const authentication = (id, token, username, ident_code) => {
+const authentication = (id, token, username) => {
     return {
         'id': id,
         'token': token,
         'username': username,
-        'ident_code': ident_code,
     }
 }
 
@@ -42,13 +34,9 @@ function createData(id, time) {
 }
 
 export default {
-
     standard: standard,
     status: status,
     authentication: authentication,
     createData: createData,
-
-    allQuestions: allQuestions,
-
 
 }
